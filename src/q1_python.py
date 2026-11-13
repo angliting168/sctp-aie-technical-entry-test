@@ -13,7 +13,13 @@
 #   - Round the result to 2 decimal places before returning
 
 def convertTemp(value, unit):
-    # Add your code here
+    if unit == "C":
+        result = (value * 9 / 5) + 32
+    elif unit == "F":
+        result = (value - 32) * 5 / 9
+    else:
+        return -1
+    return round(result, 2)
     pass
 
 
@@ -24,4 +30,17 @@ def convertTemp(value, unit):
 #   convertTemp(37, "C")      → Expected: 98.6
 #   convertTemp("invalid","X")→ Expected: -1
 
-# Add your code here
+#def convertTemp(value, unit):
+    if unit == "C":
+        result = (value * 9 / 5) + 32
+    elif unit == "F":
+        result = (value - 32) * 5 / 9
+    else:
+        return -1
+    return round(result, 2)
+
+
+print(convertTemp(100, "C"))        # 212.0
+print(convertTemp(32, "F"))         # 0.0
+print(convertTemp(37, "C"))         # 98.6
+print(convertTemp("invalid", "X"))  # -1
