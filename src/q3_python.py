@@ -6,9 +6,16 @@
 # and returns a formatted string in this format: "lastName, firstName"
 # Example: formatName("John", "Smith") → "Smith, John"
 
+# Helper: capitalises the first letter and lowercases the rest
+def capitalise(s):
+    if not s:
+        return ""
+    return s[0].upper() + s[1:].lower()
+
+
+# Task 1:
 def formatName(firstName, lastName):
-    # Add your code here
-    pass
+    return capitalise(lastName) + ", " + capitalise(firstName)
 
 
 # Task 2:
@@ -18,9 +25,14 @@ def formatName(firstName, lastName):
 # Note: your function should handle inputs in any case (upper, lower, or mixed)
 # and always produce properly capitalised output.
 
+# Task 2:
 def formatInitials(firstName, lastName):
-    # Add your code here
-    pass
+    first = capitalise(firstName)
+    last = capitalise(lastName)
+    if first == "" or last == "":
+        return ""
+    return first[0] + "." + last[0] + "."
+
 
 
 # Task 3:
@@ -30,4 +42,8 @@ def formatInitials(firstName, lastName):
 #   formatInitials("Alice","Tan") → Expected: "A.T."
 #   formatInitials("bob","lim")   → Expected: "B.L."
 
-# Add your code here
+# Task 3:
+print(formatName("Alice", "Tan"))       # Tan, Alice
+print(formatName("bob", "lim"))         # Lim, Bob
+print(formatInitials("Alice", "Tan"))   # A.T.
+print(formatInitials("bob", "lim"))     # B.L.
