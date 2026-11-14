@@ -4,7 +4,9 @@
 # Task 1:
 # Declare an empty list called inventory to store item names as strings.
 
-# Add your code here
+# Task 1:
+inventory = []
+
 
 
 # Task 2:
@@ -12,18 +14,25 @@
 # inventory list. If the item already exists, print a message instead of adding it.
 # Example message: "Mouse is already in inventory."
 
+# Task 2:
 def addItem(itemName):
-    # Add your code here
-    pass
+    if itemName in inventory:
+        print(itemName + " is already in inventory.")
+    else:
+        inventory.append(itemName)
+
 
 
 # Task 3:
 # Write a function called listInventory() that prints all items in the inventory.
 # If the inventory is empty, print: "Inventory is empty."
 
+# Task 3:
 def listInventory():
-    # Add your code here
-    pass
+    if len(inventory) == 0:
+        print("Inventory is empty.")
+    else:
+        print("Inventory:", inventory)
 
 
 # Task 4:
