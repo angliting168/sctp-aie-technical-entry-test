@@ -15,23 +15,31 @@
 
 public class Q3_java {
 
+    // Helper: capitalises the first letter and lowercases the rest
+    private static String capitalise(String s) {
+        if (s == null || s.isEmpty()) {
+            return "";
+        }
+        return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+    }
+
     public static String formatName(String firstName, String lastName) {
-        // Add your code here
-        return "";
+        return capitalise(lastName) + ", " + capitalise(firstName);
     }
 
     public static String formatInitials(String firstName, String lastName) {
-        // Add your code here
-        return "";
+        String first = capitalise(firstName);
+        String last = capitalise(lastName);
+        if (first.isEmpty() || last.isEmpty()) {
+            return "";
+        }
+        return first.substring(0, 1) + "." + last.substring(0, 1) + ".";
     }
 
     public static void main(String[] args) {
-        // Task 3: Call both methods with the following inputs and print each result:
-        //   formatName("Alice", "Tan")    → Expected: "Tan, Alice"
-        //   formatName("bob", "lim")      → Expected: "Lim, Bob"
-        //   formatInitials("Alice","Tan") → Expected: "A.T."
-        //   formatInitials("bob","lim")   → Expected: "B.L."
-
-        // Add your code here
+        System.out.println(formatName("Alice", "Tan"));       // Tan, Alice
+        System.out.println(formatName("bob", "lim"));         // Lim, Bob
+        System.out.println(formatInitials("Alice", "Tan"));   // A.T.
+        System.out.println(formatInitials("bob", "lim"));     // B.L.
     }
 }
