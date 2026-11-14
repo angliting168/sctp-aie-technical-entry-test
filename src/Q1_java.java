@@ -15,18 +15,24 @@
 public class Q1_java {
 
     public static double convertTemp(double value, String unit) {
-        // Add your code here
-        return 0;
+        double result;
+
+        if (unit.equals("C")) {
+            result = (value * 9.0 / 5.0) + 32;
+        } else if (unit.equals("F")) {
+            result = (value - 32) * 5.0 / 9.0;
+        } else {
+            return -1;
+        }
+
+        // Round to 2 decimal places
+        return Math.round(result * 100.0) / 100.0;
     }
 
     public static void main(String[] args) {
-        // Task 2:
-        // Call the method with the following inputs and print each result:
-        //   convertTemp(100, "C")  → Expected: 212.0
-        //   convertTemp(32, "F")   → Expected: 0.0
-        //   convertTemp(37, "C")   → Expected: 98.6
-        //   convertTemp(0, "X")    → Expected: -1.0
-
-        // Add your code here
+        System.out.println(convertTemp(100, "C"));  // 212.0
+        System.out.println(convertTemp(32, "F"));   // 0.0
+        System.out.println(convertTemp(37, "C"));   // 98.6
+        System.out.println(convertTemp(0, "X"));    // -1.0
     }
 }
