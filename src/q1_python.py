@@ -13,15 +13,19 @@
 #   - Round the result to 2 decimal places before returning
 
 def convertTemp(value, unit):
-    # Add your code here
-    pass
+    if unit == "C":
+        result = (value * 9 / 5) + 32
+    elif unit == "F":
+        result = (value - 32) * 5 / 9
+    else:
+        return -1
+
+    # Round to 2 decimal places
+    return round(result, 2)
 
 
 # Task 2:
-# Call the function with the following inputs and print each result:
-#   convertTemp(100, "C")     → Expected: 212.0
-#   convertTemp(32, "F")      → Expected: 0.0
-#   convertTemp(37, "C")      → Expected: 98.6
-#   convertTemp("invalid","X")→ Expected: -1
-
-# Add your code here
+print(convertTemp(100, "C"))        # 212.0
+print(convertTemp(32, "F"))         # 0.0
+print(convertTemp(37, "C"))         # 98.6
+print(convertTemp("invalid", "X"))  # -1
